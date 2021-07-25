@@ -2,26 +2,17 @@ module.exports = {
   root: true,
 
   env: {
-    node: true,
+    node: true
   },
 
-  extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/airbnb',
-  ],
+  extends: ["plugin:vue/vue3-essential", "@vue/airbnb", "prettier"],
 
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: "babel-eslint"
   },
 
   rules: {
-    'no-console': 'off',
-    'no-debugger': 'off',
-    'vue/no-multiple-template-root': 'off',
-  },
-
-  extends: [
-    'plugin:vue/essential',
-    '@vue/airbnb',
-  ],
+    "no-console": "off",
+    "no-debugger": "off"
+  }
 };
