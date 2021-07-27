@@ -15,11 +15,12 @@ export default {
   components: {
     EventCard,
   },
+
   data() {
     return {
       events: [
         {
-          id: 5928101,
+          id: 123,
           category: "animal welfare",
           title: "cat adoption day",
           description: "Find your new feline friend at this event",
@@ -30,7 +31,7 @@ export default {
           organizer: "Anaide thibault",
         },
         {
-          id: 4150293,
+          id: 456,
           category: "weapon industry",
           title: "stark new discovery",
           description: "Find your passion over nuclear war head",
@@ -42,18 +43,23 @@ export default {
         },
 
         {
-          id: 4150293,
-          category: "weapon industry",
-          title: "stark new discovery",
+          id: 789,
+          category: "spa",
+          title: "Mindfulness philosophy",
           description: "Find your passion over nuclear war head",
-          location: "Atomic city",
-          date: "April 11,2023",
+          location: "Neptune center",
+          date: "July 30, 2021",
           time: "12:00",
           petsAllowed: false,
-          organizer: "Ashiquzzaman khan",
+          organizer: "Kaleharan",
         },
       ],
     };
+  },
+  computed: {
+    testing() {
+      return this.event;
+    },
   },
 };
 </script>
