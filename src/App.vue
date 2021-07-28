@@ -1,18 +1,22 @@
 <template>
   <div id="nav">
-    <router-link :to="{ name: 'EventList' }">Events</router-link> |
-    <router-link :to="{ name: 'About' }">About</router-link>
+    <router-link :to="{ name: 'ProjectList' }">Projects</router-link> |
+    <router-link :to="{ name: 'AddProject' }">Add a New Project</router-link>
   </div>
   <router-view />
 </template>
 
 <style>
+body {
+  background: #f2f2f2;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
 }
 
 #nav {
