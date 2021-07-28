@@ -1,7 +1,8 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import EventList from "../views/EventList.vue";
 import About from "../views/About.vue";
 import Event from "../views/Event.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -17,13 +18,18 @@ const routes = [
   {
     path: "/events/:id",
     name: "Event",
-    params: true,
-    component: Event
+    component: Event,
+    props: true
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound
   }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 });
 
