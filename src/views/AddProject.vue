@@ -6,9 +6,8 @@
 
 <script>
 export default {
-  name: "AddProject",
+  name: "AddProject"
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

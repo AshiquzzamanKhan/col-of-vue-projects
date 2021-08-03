@@ -1,10 +1,13 @@
 <template>
-  <div></div>
+  <div id="nav">
+    <router-link :to="{ name: 'ProjectList' }">Projects</router-link> |
+    <router-link :to="{ name: 'AddProject' }">Add a New Project</router-link>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "nav",
+  name: "Appnav"
 };
 </script>
 

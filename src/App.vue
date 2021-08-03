@@ -1,11 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link :to="{ name: 'ProjectList' }">Projects</router-link> |
-    <router-link :to="{ name: 'AddProject' }">Add a New Project</router-link>
-  </div>
-  <router-view />
+  <Appnav></Appnav>
+  <router-view :projectList="projectList" />
 </template>
 
+<script>
+import Appnav from "@/components/Appnav.vue";
+
+export default {
+  components: {
+    Appnav
+  },
+  data() {
+    return {
+      projectList: [
+        {
+          id: 1,
+          title: "Project 1",
+          description: "Some description for project 1",
+          ptype: "web",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "Project 2",
+          description: "Some description for project 2",
+          ptype: "games",
+          completed: false
+        },
+        {
+          id: 3,
+          title: "Project 3",
+          description: "Some description for project 3",
+          ptype: "web",
+          completed: false
+        },
+        {
+          id: 4,
+          title: "Project 4",
+          description: "Some description for project 4",
+          ptype: "client",
+          completed: true
+        }
+      ]
+    };
+  }
+};
+</script>
 <style>
 body {
   background: #f2f2f2;
@@ -17,18 +57,5 @@ body {
   max-width: 600px;
   margin: 0 auto;
   color: #555;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
