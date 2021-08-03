@@ -37,7 +37,7 @@ export default {
       console.log(id);
     },
     handleDone(id) {
-      console.log(id);
+      this.$emit("completed", id);
     }
   }
 };

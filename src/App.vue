@@ -1,6 +1,6 @@
 <template>
   <Appnav></Appnav>
-  <router-view :projectList="projectList" />
+  <router-view :projectList="filtered" @addProject="addProject" />
 </template>
 
 <script>
@@ -43,6 +43,17 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    addProject(p) {
+      this.projectList.push(p);
+      this.$router.push({ name: "ProjectList" });
+    }
+  },
+  computed: {
+    filtered() {
+      return this.projectList;
+    }
   }
 };
 </script>

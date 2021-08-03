@@ -1,6 +1,12 @@
 <template>
   <div>
-    <ProjectCard v-for="project in projectList" :key="project.id" :project="project"> </ProjectCard>
+    <ProjectCard
+      v-for="project in projectList"
+      :key="project.id"
+      :project="project"
+      @completed="filteredProjectList"
+    >
+    </ProjectCard>
   </div>
 </template>
 
@@ -15,6 +21,12 @@ export default {
   props: {
     projectList: {
       type: Array
+    }
+  },
+  computed: {
+    filteredProjectList() {
+      console.log("emited event");
+      return this.projectList;
     }
   }
 };
