@@ -14,7 +14,7 @@ import Appnav from "@/components/Appnav.vue";
 
 export default {
   components: {
-    Appnav
+    Appnav,
   },
   data() {
     return {
@@ -66,12 +66,13 @@ export default {
       this.$router.push({ name: "ProjectList" });
       this.projectList.[this.projectList.map((x, i) => [i, x]).filter(x => x[1] === this.projectList)[0][0]] = pobject;
       console.log(pobject);
-    }
+    },
   },
   computed: {
     filtered() {
       return this.projectList;
-    }
+    },
+
   }
 };
 </script>

@@ -1,7 +1,8 @@
 <template>
+  <Secondarynav @filterChange="current = $event" :current="current"></Secondarynav>
   <div>
     <ProjectCard
-      v-for="project in projectList"
+      v-for="project in filtered"
       :key="project.id"
       :project="project"
       @completedProject="completedProject"
@@ -13,16 +14,23 @@
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue";
+import Secondarynav from "@/components/SecondaryNav.vue";
 
 export default {
   name: "ProjectList",
   components: {
-    ProjectCard
+    ProjectCard,
+    Secondarynav
   },
   props: {
     projectList: {
       type: Array
     }
+  },
+  data() {
+    return {
+      current: "all"
+    };
   },
   methods: {
     deleteProject(id) {
@@ -30,6 +38,17 @@ export default {
     },
     completedProject(id) {
       this.$emit("completedProject", id);
+    }
+  },
+  computed: {
+    filtered() {
+      if (this.current === "ongoing") {
+        return this.projectList.filter(project => !project.completed);
+      }
+      if (this.current === "completed") {
+        return this.projectList.filter(project => project.completed);
+      }
+      return this.projectList;
     }
   }
 };

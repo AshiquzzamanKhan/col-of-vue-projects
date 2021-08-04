@@ -7,6 +7,6 @@ _Things I have experimenting with_
 |---------|---------|
 |router | very good|
 |structure of app | extremly good|
-|Row3 | |
+|emit event | very good|
 
-:blush
+:::image type="content" source="todo app.png" alt-text="todoapp":::
