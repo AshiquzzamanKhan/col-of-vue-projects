@@ -9,4 +9,6 @@ _Things I have experimenting with_
 |structure of app | extremly good|
 |emit event | very good|
 
-:::image type="content" source="todo app.png" alt-text="todoapp":::
+![todo app](./_.png)
+
+---
