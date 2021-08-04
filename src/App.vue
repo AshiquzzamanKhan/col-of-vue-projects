@@ -1,6 +1,12 @@
 <template>
   <Appnav></Appnav>
-  <router-view :projectList="filtered" @addProject="addProject" />
+  <router-view
+    :projectList="filtered"
+    @addProject="addProject"
+    @deleteProject="deleteProject"
+    @completedProject="completedProject"
+    @editproject="editProject"
+  />
 </template>
 
 <script>
@@ -48,6 +54,18 @@ export default {
     addProject(p) {
       this.projectList.push(p);
       this.$router.push({ name: "ProjectList" });
+    },
+    deleteProject(id) {
+      this.projectList = this.projectList.filter(project => project.id !== id);
+    },
+    completedProject(id) {
+      const project = this.projectList.filter(p => p.id === id);
+      project[0].completed = !project[0].completed;
+    },
+    editProject(pobject) {
+      this.$router.push({ name: "ProjectList" });
+      this.projectList.[this.projectList.map((x, i) => [i, x]).filter(x => x[1] === this.projectList)[0][0]] = pobject;
+      console.log(pobject);
     }
   },
   computed: {

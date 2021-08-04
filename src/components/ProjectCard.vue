@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <div class="project" :class="project.completed ? 'comp' : ''">
     <div class="actions">
       <h3 @click="showDesc = !showDesc">{{ project.title }}</h3>
       - <small>{{ project.ptype }}</small>
@@ -30,14 +30,13 @@ export default {
   },
   methods: {
     handleEdit(id) {
-      console.log(id);
       this.$router.push({ name: "EditProject", params: { id } });
     },
     handleDelete(id) {
-      console.log(id);
+      this.$emit("deleteProject", id);
     },
     handleDone(id) {
-      this.$emit("completed", id);
+      this.$emit("completedProject", id);
     }
   }
 };
@@ -51,6 +50,9 @@ export default {
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
   border-left: 4px solid #e90074;
+}
+.comp {
+  border-left: 4px solid #42b983;
 }
 h3 {
   cursor: pointer;

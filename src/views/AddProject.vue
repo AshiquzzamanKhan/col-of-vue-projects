@@ -43,7 +43,6 @@ export default {
         description: this.description,
         completed: false
       };
-      console.log(p);
       this.$emit("addProject", p);
     }
   }

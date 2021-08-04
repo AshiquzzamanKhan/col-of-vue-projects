@@ -4,7 +4,8 @@
       v-for="project in projectList"
       :key="project.id"
       :project="project"
-      @completed="filteredProjectList"
+      @completedProject="completedProject"
+      @deleteProject="deleteProject"
     >
     </ProjectCard>
   </div>
@@ -23,10 +24,12 @@ export default {
       type: Array
     }
   },
-  computed: {
-    filteredProjectList() {
-      console.log("emited event");
-      return this.projectList;
+  methods: {
+    deleteProject(id) {
+      this.$emit("deleteProject", id);
+    },
+    completedProject(id) {
+      this.$emit("completedProject", id);
     }
   }
 };
