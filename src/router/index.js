@@ -1,25 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ProjectList from "../views/ProjectList.vue";
-import AddProject from "../views/AddProject.vue";
-import EditProject from "../views/EditProject.vue";
+import Home from "../views/Home.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
     path: "/",
-    name: "ProjectList",
-    component: ProjectList
-  },
-  {
-    path: "/add",
-    name: "AddProject",
-    component: AddProject
-  },
-  {
-    path: "/edit/:id",
-    name: "EditProject",
-    component: EditProject,
-    props: true
+    name: "Home",
+    component: Home
   },
   {
     path: "/:catchAll(.*)",
