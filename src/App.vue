@@ -1,5 +1,4 @@
 <template>
-  <Appnav></Appnav>
   <router-view />
 </template>
 
