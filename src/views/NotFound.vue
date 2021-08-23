@@ -2,4 +2,5 @@
   <h2>404</h2>
   <h3>page not Found</h3>
   <button>Go Back</button>
+  <p>Artificial Inteligence</p>
 </template>
